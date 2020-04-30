@@ -27,21 +27,26 @@ let mortgageCalculator = function() {
 For example,
 mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
 */
-
-mortgageCalculator = function(P,I,N, creditScore) {
-    if (creditScore>740) {
-        I -= 0.005
-    } else if ( creditScore < 660) {
-        I += 0.005
-    }
-    return ((P*(I/12*(Math.pow(1+I/12, N*12))/(Math.pow((1+I/12), N*12)-1))).toFixed(2));
+mortgageCalculator = function(P,I,N) {
+    return (P*(I/12*(Math.pow(1+I/12, N*12))/(Math.pow((1+I/12), N*12)-1))).toFixed(7);
 }
-//console.log(mortgageCalculator(200000,0.05,30,580))
+console.log(mortgageCalculator(200000,0.05,30))
+
+
+
+
+
+// 🏡 Task 5: Conditionals
+/* Add another paramter to your function called credit score. This parameter will be a number between 0 and 800 (a credit score).
+
+Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
+*/
+
+
 
 
 // 🏡 Task 6: Loops
-/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment 
-for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
+/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from the inputted interest rate. Complete these calculations using a for loop.
 
 For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
@@ -55,22 +60,15 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-let variableInterestRate = function (P,I,N) {
-    for (let i = I-.02; i < I+.02; i+=.005 ) {
-        console.log(`Gerardo, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${((P*(i/12*(Math.pow(1+i/12, N*12))/(Math.pow((1+i/12), N*12)-1))).toFixed(0))}`);
-    }
-}  
-variableInterestRate(200000, 0.04, 30);
+
 
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
-
-
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
-/*   Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
 
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */

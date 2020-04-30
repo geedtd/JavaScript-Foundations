@@ -19,7 +19,7 @@ let monthlyRate = (principal*(numerator/denominator).toFixed(7));
 let mortgageCalculator = function() {
     return `Gerardo, your monthly rate is ${monthlyRate}`
 }
-//console.log(mortgageCalculator());
+console.log(mortgageCalculator());
 
 //  Task 4: Arguments and Parameters
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
@@ -36,7 +36,7 @@ mortgageCalculator = function(P,I,N, creditScore) {
     }
     return ((P*(I/12*(Math.pow(1+I/12, N*12))/(Math.pow((1+I/12), N*12)-1))).toFixed(2));
 }
-//console.log(mortgageCalculator(200000,0.05,30,580))
+console.log(mortgageCalculator(200000,0.05,30,580))
 
 
 // 🏡 Task 6: Loops
@@ -55,16 +55,14 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
-let variableInterestRate = function (P,I,N) {
-    for (let i = I-.02; i < I+.02; i+=.005 ) {
-        console.log(`Gerardo, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${((P*(i/12*(Math.pow(1+i/12, N*12))/(Math.pow((1+i/12), N*12)-1))).toFixed(0))}`);
-    }
-}  
-variableInterestRate(200000, 0.04, 30);
+
 
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
+
+
+   
 
 
 

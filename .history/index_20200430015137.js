@@ -57,7 +57,7 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 let variableInterestRate = function (P,I,N) {
     for (let i = I-.02; i < I+.02; i+=.005 ) {
-        console.log(`Gerardo, with an interest rate of ${i.toFixed(3)}, your monthly rate is $${((P*(i/12*(Math.pow(1+i/12, N*12))/(Math.pow((1+i/12), N*12)-1))).toFixed(0))}`);
+        console.log(`Gerardo, with an interest rate of ${i.toFixed(3)}, your monthly rate is ${((P*(i/12*(Math.pow(1+i/12, N*12))/(Math.pow((1+i/12), N*12)-1))).toFixed(0))}`);
     }
 }  
 variableInterestRate(200000, 0.04, 30);
